@@ -18,7 +18,9 @@ class Article {
   }
   expandArticle() {
     // debugger
-    this.domElement.classList.toggle('.article-open');
+    // console.log(this.domElement);
+    this.domElement.classList.toggle('article-open');
+    
   }
 }
 
