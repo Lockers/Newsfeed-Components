@@ -20,7 +20,9 @@ class Article {
     // debugger
     // console.log(this.domElement);
     this.domElement.classList.toggle('article-open');
-    
+    TweenMax.to('.article', 1, { y: 200, repeat: 0, yoyo: true });
+    this.domElement.style.backgroundColor = 'aqua'
+    this.expandButton.textContent = 'hide'
   }
 }
 
@@ -37,3 +39,51 @@ let articles = document.querySelectorAll('.article');
 articles.forEach((article) => {
   new Article(article);
 })
+
+// const articleData = [
+//   {
+//     heading: 'Sheep',
+//     paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//   },
+//   {
+//     heading: 'Lambs',
+//     paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//   },
+//   {
+//     heading: 'Wolves',
+//     paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//   },
+// ];
+
+// class ArticleGenerator {
+//   constructor(article, data) {
+//     this.article = article;
+//     this.data = data;
+
+//     this.createHeading();
+//     this.createParagraphs();
+//   }
+
+//   createHeading() {
+//     const heading = document.createElement('h3');
+//     heading.textContent = this.data.heading;
+//     this.article.append(heading);
+//   }
+
+//   createParagraphs() {
+//     const para1 = document.createElement('p');
+//     para1.textContent = this.data.paragraph1;
+//     this.article.insertAdjacentElement('beforeend', para1);
+
+//     const para2 = document.createElement('p');
+//     para2.textContent = this.data.paragraph2;
+//     this.article.insertAdjacentElement('beforeend', para2);
+//   }
+// }
+
+// articles.forEach((article, idx) => {
+//   new ArticleGenerator(article, articleData[idx]);
+// })
